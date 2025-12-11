@@ -21,7 +21,7 @@ int main(){
     while(getline(inputFile, line)){
         // Process each box dimensions read from the file
         
-        sscanf(line.c_str(), "%dx%dx%d", &l, &w, &h); // Parse dimensions from the line 
+        sscanf(line.c_str(), "%dx%dx%d", &l, &w, &h); // Parse dimensions from the line and feed them into l, w, h
 
         //cout << "Box dimensions: " << l << "x" << w << "x" << h << endl;
         surface_area = 2*l*w + 2*w*h + 2*h*l; // Calculate surface area
