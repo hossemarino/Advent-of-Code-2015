@@ -26,9 +26,9 @@ int main()
     int RSIP_X = 0, RSIP_Y = 0; // Robo-Santa's starting position
 
     // Sets to track unique positions visited by Santa and Robo-Santa
-    set<pair<int, int>> positions_santa;
-    set<pair<int, int>> positions_robo_santa;
-    set<pair<int, int>> all_positions;
+    set<pair<int, int>> positions_santa;      // Santa's positions
+    set<pair<int, int>> positions_robo_santa; // robo-Santa's positions
+    set<pair<int, int>> all_positions;        // Combined positions
 
     positions_santa.insert(make_pair(SIP_X, SIP_Y));        // Starting position (0,0)
     positions_robo_santa.insert(make_pair(RSIP_X, RSIP_Y)); // Starting position (0,0)
@@ -40,7 +40,9 @@ int main()
 
     char ch;
     while (inputFile.get(ch))
-    { // Process each character read from the file
+    {
+        // Process each character read from the file
+        // Alternate between Santa and Robo-Santa based on the index
         if (index % 2 == 0)
         {
             // Santa's turn
@@ -64,7 +66,6 @@ int main()
                 total_gifts++;
                 SIP_X++;
             }
-            //cout << "Santa moves " << ch << " to (" << SIP_X << ", " << SIP_Y << ")" << endl;
             positions_santa.insert({SIP_X, SIP_Y});
         }
         else
@@ -90,7 +91,6 @@ int main()
                 total_gifts++;
                 RSIP_X++;
             }
-            //cout << "Robo-Santa moves " << ch << " to (" << RSIP_X << ", " << RSIP_Y << ")" << endl;
             positions_robo_santa.insert({RSIP_X, RSIP_Y});
         }
         index++;
@@ -102,8 +102,6 @@ int main()
     all_positions.insert(positions_robo_santa.begin(), positions_robo_santa.end());
 
     cout << "------------------------------------------------------------------------------------" << endl;
-    cout << "Total unique houses visited (combined): " << all_positions.size() << endl;
-    cout << "------------------------------------------------------------------------------------" << endl;
     cout << "Gifts delivered by Santa: " << total_gifts / 2 << endl;
     cout << "Gifts delivered by Robo-Santa: " << total_gifts / 2 << endl;
     cout << "final position of Santa: (" << SIP_X << ", " << SIP_Y << ")" << endl;
@@ -113,6 +111,8 @@ int main()
     cout << "------------------------------------------------------------------------------------" << endl;
     cout << "Total gifts delivered: " << total_gifts << endl;
     cout << "Total houses visited: " << housesVisited(positions_santa) + housesVisited(positions_robo_santa) - 1 << endl;
+    cout << "------------------------------------------------------------------------------------" << endl;
+    cout << "Total unique houses visited (combined): " << all_positions.size() << endl;
     inputFile.close();
     return 0;
 }
