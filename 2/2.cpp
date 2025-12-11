@@ -11,7 +11,7 @@ int main(){
     long total_paper = 0; // part 1 asks for total wrapping paper
     long total_ribbon = 0; //  part 2 asks for total ribbon length
     
-    ifstream inputFile("boxes");
+    ifstream inputFile("boxes.txt");
     if (!inputFile.is_open())
     {
         cerr << "Error opening the file!" << endl;
