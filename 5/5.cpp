@@ -38,19 +38,14 @@ bool is_nice(string s, int part = 1)
                 bad_combination = true;
             }
         }
-        // Final evaluation
-        if (vowel_count >= 3 && double_letter && !bad_combination){
-            return true;
-        }
-        else{
-            return false;
-        }
     }
     else if (part == 2){
         // Part 2 rules
 
         // Check for pair that appears at least twice without overlapping
         for (size_t i = 0; i < s.length() - 1; i++){
+            // Extract the pair of characters starting at position i
+            // Check if this pair appears again in the string starting from position i + 2
             string pair = s.substr(i, 2);
             if (s.find(pair, i + 2) != string::npos){
                 pair_repeats = true;
@@ -58,12 +53,13 @@ bool is_nice(string s, int part = 1)
         }
 
         // Check for letter that repeats with exactly one letter between
-        for (size_t i = 0; i < s.length() - 2; i++){
+        for (size_t i = 0; i < s.length() - 2; i++){ 
+            // Ensure we don't go out of bounds
+            // Check if the character at position i is the same as the character at position i + 2
             if (s[i] == s[i + 2]){
                 repeat_with_one_between = true;
             }
         }
-
     }
 
     // Final evaluation
