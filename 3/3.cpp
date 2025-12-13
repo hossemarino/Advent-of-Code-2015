@@ -102,17 +102,17 @@ int main()
     all_positions.insert(positions_robo_santa.begin(), positions_robo_santa.end());
 
     cout << "------------------------------------------------------------------------------------" << endl;
-    cout << "Gifts delivered by Santa: " << total_gifts / 2 << endl;
-    cout << "Gifts delivered by Robo-Santa: " << total_gifts / 2 << endl;
-    cout << "final position of Santa: (" << SIP_X << ", " << SIP_Y << ")" << endl;
-    cout << "final position of Robo-Santa: (" << RSIP_X << ", " << RSIP_Y << ")" << endl;
-    cout << "Houses visited by Santa: " << positions_santa.size() << endl;
-    cout << "Houses visited by Robo-Santa: " << positions_robo_santa.size() << endl;
-    cout << "------------------------------------------------------------------------------------" << endl;
-    cout << "Total gifts delivered: " << total_gifts << endl;
-    cout << "Total houses visited: " << housesVisited(positions_santa) + housesVisited(positions_robo_santa) - 1 << endl;
-    cout << "------------------------------------------------------------------------------------" << endl;
-    cout << "Total unique houses visited (combined): " << all_positions.size() << endl;
+    cout << "Gifts delivered by Santa: " << total_gifts / 2 <<"\n";
+    cout << "Gifts delivered by Robo-Santa: " << total_gifts / 2 << "\n";
+    cout << "final position of Santa: (" << SIP_X << ", " << SIP_Y << ")" << "\n";
+    cout << "final position of Robo-Santa: (" << RSIP_X << ", " << RSIP_Y << ")" << "\n";
+    cout << "Houses visited by Santa: " << positions_santa.size() << "\n";
+    cout << "Houses visited by Robo-Santa: " << positions_robo_santa.size() << "\n";
+    cout << "------------------------------------------------------------------------------------" << "\n";
+    cout << "Total gifts delivered: " << total_gifts << "\n";
+    cout << "Total houses visited: " << housesVisited(positions_santa) + housesVisited(positions_robo_santa) - 1 << "\n";
+    cout << "------------------------------------------------------------------------------------" << "\n";
+    cout << "Total unique houses visited (combined): " << all_positions.size() << "\n";
     inputFile.close();
     return 0;
 }

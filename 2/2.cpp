@@ -5,7 +5,6 @@
 using namespace std;
 
 int main(){
-    cout << "Hello, World!" << endl;
     int l,w,h; // Declare length, width, height
     int surface_area,extra_paper,ribbon_length,min_perimeter;
     long total_paper = 0; // part 1 asks for total wrapping paper
@@ -14,7 +13,7 @@ int main(){
     ifstream inputFile("boxes.txt");
     if (!inputFile.is_open())
     {
-        cerr << "Error opening the file!" << endl;
+        cerr << "Error opening the file!" << "\n";
         return 1;
     }
     string line;
@@ -29,7 +28,7 @@ int main(){
         min_perimeter = 2 * (l + w + h - max({l, w, h})); // Smallest perimeter around the box
     
         ribbon_length = min_perimeter + (l * w * h); // Total ribbon length
-        cout << "Ribbon length for this box: " << ribbon_length << " units" << endl;    
+        cout << "Ribbon length for this box: " << ribbon_length << " units" << "\n";    
         total_ribbon += ribbon_length;
         //cout << "Surface area: " << surface_area << ", Extra paper: " << extra_paper << endl;
         int total_box_paper = surface_area + extra_paper; // Total wrapping paper needed
@@ -40,8 +39,8 @@ int main(){
     }
     inputFile.close();
 
-    cout << "Total wrapping paper needed for all boxes: " << total_paper << " square units" << endl;
-    cout << "Total ribbon length needed for all boxes: " << total_ribbon << " units" << endl;
+    cout << "Total wrapping paper needed for all boxes: " << total_paper << " square units" << "\n";
+    cout << "Total ribbon length needed for all boxes: " << total_ribbon << " units" << "\n";
 
     // Added optimization and stripping in the build process.
     return 0;
