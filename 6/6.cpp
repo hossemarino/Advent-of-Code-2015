@@ -15,7 +15,6 @@ int main()
     string line;
     
     while (getline(input, line)) {
-        cout << line << endl;
         string command;
         int x1, y1, x2, y2;
         if (line.substr(0, 7) == "turn on"){
