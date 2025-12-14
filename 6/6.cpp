@@ -51,6 +51,6 @@ int main(){
     }
     cout << "Total brightness is: " << count << endl;
 
-    cout << "\n\n--------END-----------\n\n";
+    cout << "\n\n-----------END-----------\n\n";
     return 0;
 }
