@@ -9,13 +9,17 @@ int on = 1;
 int off = 0;
 int count = 0;
 
+string instructions = "turn on 0,0 through 999,999\n"
+                      "toggle 0,0 through 999,0\n"
+                      "turn off 499,499 through 500,500";
+string instructions_1 = "turn on 0,0 through 999,999\n";
 int main()
 {
     ifstream input("input.txt");
-    string line;
+    string line = instructions_1;
     
-    while (getline(input, line)) {
-        cout << line << endl;
+    
+       
         string command;
         int x1, y1, x2, y2;
         if (line.substr(0, 7) == "turn on") {
@@ -48,7 +52,7 @@ int main()
                 }
             }
         }
-    }
+
 
 
     for (int i = 0; i < 1000; i++) {
