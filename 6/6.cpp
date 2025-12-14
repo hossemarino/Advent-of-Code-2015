@@ -9,11 +9,14 @@ int on = 1;
 int off = 0;
 int count = 0;
 
-int main(){
+int main()
+{
     ifstream input("input.txt");
     string line;
-
-    while (getline(input, line)){
+    
+    while (getline(input, line)) {
+        cout << line << endl;
+        string command;
         int x1, y1, x2, y2;
         if (line.substr(0, 7) == "turn on"){
             // sscanf is used to parse formatted input from a string
@@ -43,6 +46,7 @@ int main(){
             }
         }
     }
+
 
     for (int i = 0; i < 1000; i++){
         for (int j = 0; j < 1000; j++){
